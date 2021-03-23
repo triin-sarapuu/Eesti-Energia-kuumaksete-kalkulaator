@@ -1,0 +1,253 @@
+html {
+    background-color: #ecf6fa;
+}
+
+body {
+    background-color: white;
+    color: #4c5b68;
+    font-family: Arial, sans-serif;
+    margin: 5vh auto 12vh auto;
+    padding: 45px;
+    width: 73vw;
+}
+
+h1 {
+    font-size: 27px;
+    margin-top: 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-top: 0;
+    text-align: left;
+}
+
+/* Styled checkbox
+https://www.youtube.com/watch?v=y93M3RoKQUE&list=WL&index=52&t=34s */
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px auto;
+    outline: none;
+    height: 30px;
+    width: 30px;
+}
+
+input[type="checkbox"]:after {
+    color: white;
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-size: 15px;
+    font-weight: 600;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #34b233;
+    border: none;
+}
+
+table {
+    border-spacing: 0;
+    width: 100%;
+}
+
+th, td {
+    padding: 20px 10px 20px 10px;
+    width: 50%;
+}
+
+th {
+    font-weight: normal;
+    text-align: left;
+}
+
+td {
+    font-weight: bold;
+    text-align: right;
+}
+
+div.services {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 30%;
+    margin-bottom: 40px;
+}
+
+div.service {
+    border: 1px solid #ededed;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px #ddd;
+    display: flex;
+    flex-direction: column;
+    margin-right: 25px;
+    min-width: 13%;
+    padding: 30px;
+    text-align: center;
+}
+
+div.service:last-child {
+    margin-right: 0;
+}
+
+div.data {
+    border-top: 2px solid #ededed;
+    display: flex;
+    flex-direction: row;
+}
+
+div.inputs {
+    display: flex;
+    flex-direction: column;
+    margin-right: 37.5px;
+    margin-top: 40px;
+    width: 50%;
+}
+
+div.full-cost-value {
+    display: flex;
+    flex-direction: row;
+}
+
+#value {
+    margin-left: 5px;
+}
+
+#full-cost {
+    -webkit-appearance: none;
+    background: #ade0ad;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    height: 10px;
+    width: 100%;
+}
+
+#full-cost::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #34b233;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+}
+
+#range-endpoints {
+    margin-top: 20px;
+}
+
+#max {
+    float: right;
+}
+
+div.period_deposit {
+    border-top: 2px solid #ededed;
+    display: flex;
+    flex-direction: row;
+    margin-top: 35px;
+    padding-top: 40px;
+    white-space: nowrap;
+}
+
+div.period, div.deposit {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+div.period {
+    margin-right: 20px;
+}
+
+div.deposit input {
+    border: 1px solid #ededed;
+    box-shadow: 0 1px 2px 1px #858d94;
+    color: #4c5b68;
+    font-size: 16px;
+    font-weight: bolder;
+    height: 58px;
+    line-height: 58px;
+    outline: none;
+    padding: 0 15px 0 15px;
+}
+
+span.required {
+    color: #d54226;
+}
+
+div.values {
+    margin-top: 20px;
+    width: 50%;
+}
+
+tr:nth-child(even) {
+    background-color: #f7fafa;
+}
+
+tr:last-child {
+    background-color: #ecf6fa;
+}
+
+tr:last-child th, td {
+    font-weight: bold;
+}
+
+tr:last-child th {
+    font-size: 17px;
+}
+
+tr:last-child td {
+    color: #34b233;
+    font-size: 20px;
+    line-height: 19px;
+}
+
+#submit {
+    background-color: #34b233;
+    border: 0;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    font-size: 19px;
+    font-weight: bolder;
+    margin: 40px auto 0 auto;
+    outline: none;
+    padding: 20px 40px 20px 40px;
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    h1 {
+        margin-bottom: 40px;
+    }
+    div.services, div.data {
+        align-items: center;
+        flex-direction: column;
+    }
+    div.service {
+        margin-bottom: 25px;
+    }
+    div.service:last-child {
+        margin-bottom: 0;
+    }
+    div.inputs, div.values {
+        margin: 0 auto;
+        width: 100%;
+    }
+    div.full-cost-value h2 {
+        margin-top: 20px;
+    }
+}

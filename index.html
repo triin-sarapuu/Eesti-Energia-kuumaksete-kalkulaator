@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kuumaksete kalkulaator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dropdown.css">
+</head>
+
+<body>
+    <h1>Kuumaksete kalkulaator</h1>
+    <h2>Teenus:</h2>
+    <div class="services">
+        <div class="service">
+            <input id="päikesepaneelid" type="checkbox" onclick="saveServiceData(this)">
+            Päikesepaneelid
+        </div>
+        <div class="service">
+            <input id="soojuspumbad" type="checkbox" onclick="saveServiceData(this)">
+            Soojuspump
+        </div>
+        <div class="service">
+            <input id="tööd" type="checkbox" onclick="saveServiceData(this)">
+            Elektritööd või gaasitööd
+        </div>
+        <div class="service">
+            <input id="võrguvaba" type="checkbox" onclick="saveServiceData(this)">
+            Off-Grid võrguvaba elekter
+        </div>
+        <div class="service">
+            <input id="elektriautod" type="checkbox" onclick="saveServiceData(this)">
+            Elektriautode laadimislahendused
+        </div>
+    </div>
+
+    <div class="data">
+
+        <div class="inputs">
+            <div class="full-cost-value">
+                <h2>Summa:</h2><span id="value"></span>
+            </div>
+
+            <input id="full-cost" type="range" min="300" max="25000" value="300" oninput="saveFullCost()">
+            <div id="range-endpoints"><span>300 €</span><span id="max">25 000 €</span></div>
+
+            <div class="period_deposit">
+                <div class="period">
+                    <h2>Periood:<span class="required"> *</span></h2>
+                    <div class="dropdown">
+                        <button onclick="toggleDropdown()" class="dropdown-button">
+                            <span id="period-selection">-</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div id="dropdown-content" class="dropdown-content"></div>
+                    </div>
+                </div>
+
+                <div class="deposit">
+                    <h2>Sissemakse (eur):<span class="required"> *</span></h2>
+                    <input id="deposit" type="number" min="0" placeholder="0" oninput="saveDeposit()" required>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="values">
+            <table>
+                <tr>
+                    <th>Intress</th>
+                    <td id="interest"></td>
+                </tr>
+                <tr>
+                    <th>Lepingutasu</th>
+                    <td id="contract-fee"></td>
+                </tr>
+                <tr>
+                    <th>Igakuine haldustasu</th>
+                    <td id="management-fee"></td>
+                </tr>
+                <tr>
+                    <th>Periood</th>
+                    <td id="period"></td>
+                </tr>
+                <tr>
+                    <th>Projekti maksumus</th>
+                    <td id="credit-amount"></td>
+                </tr>
+                <tr>
+                    <th>Kuumakse</th>
+                    <td id="monthly-payment"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <button id="submit" onclick="location.reload()">
+        Esitan taotluse
+        <i class="fas fa-chevron-right" data-fa-transform="right-5"></i>
+    </button>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.2/js/all.js"></script>
+    <script src="js/Application.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/script.js"></script>
+
+    <!-- Only one checkbox is allowed to be checked at a time
+    https://www.codexworld.com/how-to/allow-only-one-checkbox-to-be-checked-jquery/ -->
+    <script>
+        $(document).ready(function () {
+            $('input:checkbox').click(function () {
+                $('input:checkbox').not(this).prop('checked', false);
+            });
+        });</script>
+
+    <!-- Checkboxes cannot be unchecked by clicking on them (one checkbox always has to be checked)
+    https://stackoverflow.com/questions/39239489/jquery-always-has-one-checkbox-checked -->
+    <script>
+        $(function () {
+            $(':checkbox').click(function () {
+                $(this).prop('checked', true).siblings(':checkbox').prop("checked", false);
+            });
+        });
+    </script>
+</body>
+
+</html>

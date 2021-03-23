@@ -1,0 +1,40 @@
+/* Clickable dropdown menu that serves as an input for the period
+https://www.w3schools.com/howto/howto_js_dropdown.asp*/
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.dropdown-button {
+    background: white;
+    border: 1px solid #ededed;
+    box-shadow: 0 1px 2px 1px #858d94;
+    color: #4c5b68;
+    cursor: pointer;
+    display: block;
+    outline: none;
+    padding: 0 0 0 15px;
+    text-align: left;
+    height: 60px;
+    width: 100%;
+}
+
+#period-selection {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bolder;
+    width: 85%;
+}
+
+.show {
+    display: block;
+}
