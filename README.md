@@ -1,6 +1,8 @@
 <h1>Kuumaksete kalkulaator</h1>
 <h2>Eesti Energia veebiarendaja praktikale kandideerimise kodutöö</h2>
 
+Rakendus on nähtav aadressil <a href="https://kuumaksete-kalkulaator.netlify.app/">kuumaksete-kalkulaator.netlify.app/</a>
+
 <h3>Kirjeldus</h3>
 Tegemist on kalkulaatoriga, mis arvutab välja summa, mille klient maksuperioodi jooksul igas kuus peab tasuma. Arvutustel võetakse arvesse teenust ja sellega seotud andmeid, projekti täismaksumust, kliendi sissemaksu ning makseperioodi pikkust.
 
