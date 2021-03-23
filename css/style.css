@@ -239,6 +239,7 @@ tr:last-child td {
     }
     div.service {
         margin-bottom: 25px;
+        width: 75%;
     }
     div.service:last-child {
         margin-bottom: 0;
